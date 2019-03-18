@@ -2,7 +2,7 @@
  * @Author: @虾哔哔 
  * @Date: 2019-03-18 11:29:03 
  * @Last Modified by: @虾哔哔
- * @Last Modified time: 2019-03-18 14:57:20
+ * @Last Modified time: 2019-03-18 16:10:51
  */
 const express = require('express');
 const axios = require('axios');
@@ -18,7 +18,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
     let url = 'http://i.jandan.net/';
     let params = {
-        oxwlxojflwblxbsapi: "jandan.get_duan_comments",
+        oxwlxojflwblxbsapi: "jandan.get_ooxx_comments",
         page: req.query.page || 1
     }
     axios.get(url, {
