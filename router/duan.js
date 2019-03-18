@@ -1,10 +1,17 @@
+/*
+ * @Author: @虾哔哔 
+ * @Date: 2019-03-18 11:29:03 
+ * @Last Modified by: @虾哔哔
+ * @Last Modified time: 2019-03-18 14:58:17
+ */
 const express = require('express');
 const axios = require('axios');
 const router = express.Router()
 
 
 /**
- * @description 首页
+ * @description 段子
+ * @method GET
  * @url {*} '/duan'
  * @params {*} page
  */
@@ -21,7 +28,7 @@ router.get('/', (req, res) => {
             res.json(success.data);
         })
         .catch(err => {
-            console.error(err);
+            res.json(err.data);
         })
 });
 

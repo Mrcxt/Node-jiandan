@@ -1,3 +1,9 @@
+/*
+ * @Author: @虾哔哔 
+ * @Date: 2019-03-18 11:29:10 
+ * @Last Modified by: @虾哔哔
+ * @Last Modified time: 2019-03-18 14:56:00
+ */
 const express = require('express');
 const cheerio = require('cheerio')
 const path = require('path')
@@ -17,10 +23,17 @@ app.use(bodyParser.urlencoded({
 }));
 
 // router
-app.use('/', require('./router/index.js'));
-app.use('/duan', require('./router/duan.js'));
-app.use('/ooxx', require('./router/ooxx.js'));
-app.use('/pic', require('./router/pic.js'));
+app.use('/', require('./router/index.js')); //首页
+app.use('/duan', require('./router/duan.js')); //段子
+app.use('/ooxx', require('./router/ooxx.js')); //妹子图
+app.use('/pic', require('./router/pic.js')); //无聊图
+app.use('/tucao', require('./router/tucao.js')); //获取评论
+app.use('/jandan-tucao', require('./router/jandan-tucao.js')); //获取评论
+
+// 
+app.use(function(req, res, next) {
+    res.status(404).send('404 - Not Found!');
+});
 
 
 // server
