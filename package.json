@@ -1,12 +1,16 @@
 {
-  "name": "Node-jiandan",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.4"
-  }
+    "name": "Node-jiandan",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "node app.js --open"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "body-parser": "^1.18.3",
+        "cheerio": "^1.0.0-rc.2",
+        "cors": "^2.8.5",
+        "express": "^4.16.4"
+    }
 }
