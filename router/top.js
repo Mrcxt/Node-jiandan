@@ -43,9 +43,9 @@ async function getTop(req, res, url) {
     $(content).find('#comments .commentlist>li').each(function(index, ele) {
         // 作者信息
         let _comment_author = $(ele).find('.author strong').text() //作者
-        let _comment_date = $(ele).find('.author samll').text() // 发布时间
+        let _comment_date = $(ele).find('.author small').text() // 发布时间
             // 文章信息
-        let _comment_class = $(ele).find('.text samll').text() //文章分类
+        let _comment_class = $(ele).find('.text small').text() //文章分类
         let _comment_ID = $(ele).find('.text .righttext').text() //文章id
         let _comment_content = $(ele).find('.text>p').html() //文章内容
             // 评论信息
@@ -95,17 +95,17 @@ router.get('/tucao', (req, res) => {
     getTop(req, res, url)
 });
 // 4小时热门
-router.get('/tucao', (req, res) => {
+router.get('/4h', (req, res) => {
     let url = 'http://jandan.net/top-4h'
     getTop(req, res, url)
 });
 // 3日最佳
-router.get('/tucao', (req, res) => {
+router.get('/3days', (req, res) => {
     let url = 'http://jandan.net/top-3days'
     getTop(req, res, url)
 });
 // 7日最佳
-router.get('/tucao', (req, res) => {
+router.get('/7days', (req, res) => {
     let url = 'http://jandan.net/top-7days'
     getTop(req, res, url)
 });
