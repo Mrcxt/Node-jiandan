@@ -2,7 +2,7 @@
  * @Author: @虾哔哔 
  * @Date: 2019-03-18 11:29:10 
  * @Last Modified by: @虾哔哔
- * @Last Modified time: 2019-03-18 15:17:15
+ * @Last Modified time: 2019-03-19 09:56:04
  */
 const express = require('express');
 const cheerio = require('cheerio')
@@ -31,6 +31,7 @@ app.use('/', require('./router/index.js')); //首页
 app.use('/duan', require('./router/duan.js')); //段子
 app.use('/ooxx', require('./router/ooxx.js')); //妹子图
 app.use('/pic', require('./router/pic.js')); //无聊图
+app.use('/top', require('./router/top.js')); //top
 app.use('/tucao', require('./router/tucao.js')); //获取评论
 app.use('/jandan-tucao', require('./router/jandan-tucao.js')); //评论
 app.use('/vote', require('./router/vote.js')); //投票
