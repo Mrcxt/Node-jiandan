@@ -7,6 +7,7 @@
 const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio')
+const formatString = require('../until/formatString')
 
 // 
 const router = express.Router()
@@ -52,13 +53,13 @@ async function getTop(req, res, url) {
         let _vote_positive = $(ele).find('.jandan-vote span').eq(0).text() //点OO
         let _vote_negative = $(ele).find('.jandan-vote span').eq(1).text() //点XX
         _comments.push({
-            comment_author: _comment_author,
-            comment_date: _comment_date,
-            comment_class: _comment_class,
-            comment_ID: _comment_ID,
-            comment_content: _comment_content,
-            vote_positive: _vote_positive,
-            vote_negative: _vote_negative,
+            comment_author: formatString(_comment_author),
+            comment_date: formatString(_comment_date),
+            comment_class: formatString(_comment_class),
+            comment_ID: formatString(_comment_ID),
+            comment_content: formatString(_comment_content),
+            vote_positive: formatString(_vote_positive),
+            vote_negative: formatString(_vote_negative),
         })
     })
 
