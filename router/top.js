@@ -15,7 +15,7 @@ const router = express.Router()
 /**
  * @description 排行榜
  * @method GET
- * @url {*} '/top'
+ * @url {*} '/top/'
  * @params {*}
  */
 
@@ -34,11 +34,11 @@ async function getTop(req, res, url) {
     // 
     const $ = cheerio.load(_html)
 
-    let content = $('body #content '); //需要抓取的内容主体
+    const content = $('#body #content'); //需要抓取的内容主体
 
     let _tab = $(content).find('.hot-tabs .current-tab').text() //栏目
 
-    let _posts = []
+    let _comments = []
 
     $(content).find('#comments .commentlist>li').each(function(index, ele) {
         // 作者信息
@@ -51,7 +51,7 @@ async function getTop(req, res, url) {
             // 评论信息
         let _vote_positive = $(ele).find('.jandan-vote span').eq(0).text() //点OO
         let _vote_negative = $(ele).find('.jandan-vote span').eq(1).text() //点XX
-        _posts.push({
+        _comments.push({
             comment_author: _comment_author,
             comment_date: _comment_date,
             comment_class: _comment_class,
@@ -65,7 +65,7 @@ async function getTop(req, res, url) {
 
     res.json({
         tab: _tab,
-        posts: _posts
+        comments: _comments
     });
 }
 

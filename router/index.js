@@ -2,7 +2,7 @@
  * @Author: @虾哔哔 
  * @Date: 2019-03-18 11:29:03 
  * @Last Modified by: @虾哔哔
- * @Last Modified time: 2019-03-18 16:10:37
+ * @Last Modified time: 2019-03-20 10:36:14
  */
 const express = require('express');
 const axios = require('axios');
@@ -10,7 +10,7 @@ const router = express.Router()
 
 
 /**
- * @description 段子
+ * @description 首页
  * @method GET
  * @url {*} '/duan'
  * @params {*} page
